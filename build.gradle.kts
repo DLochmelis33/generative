@@ -12,7 +12,7 @@ val applicationMainClass = "TemplateProgramKt"
 /**  ## additional ORX features to be added to this project */
 val orxFeatures = setOf(
 //  "orx-boofcv",
-//  "orx-camera",
+  "orx-camera",
 //  "orx-chataigne",
     "orx-color",
     "orx-compositor",
@@ -30,7 +30,7 @@ val orxFeatures = setOf(
 //  "orx-interval-tree",
 //  "orx-jumpflood",
 //  "orx-kdtree",
-//  "orx-keyframer",      
+//  "orx-keyframer",
 //  "orx-kinect-v1",
 //  "orx-kotlin-parser",
 //  "orx-mesh-generators",
@@ -53,7 +53,7 @@ val orxFeatures = setOf(
     "orx-shapes",
 //  "orx-syphon",
 //  "orx-temporal-blur",
-//  "orx-tensorflow",    
+//  "orx-tensorflow",
 //  "orx-time-operators",
 //  "orx-timer",
 //  "orx-triangulation",
@@ -71,7 +71,7 @@ val ormlFeatures = setOf<String>(
 //    "orml-ssd",
 //    "orml-style-transfer",
 //    "orml-super-resolution",
-//    "orml-u2net"
+    "orml-u2net"
 )
 
 /** ## additional OPENRNDR features to be added to this project */
@@ -99,6 +99,8 @@ repositories {
 }
 
 dependencies {
+
+    implementation("org.apache.commons:commons-math:2.2")
 
 //    implementation(libs.jsoup)
 //    implementation(libs.gson)
