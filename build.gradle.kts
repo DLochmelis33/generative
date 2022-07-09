@@ -56,7 +56,7 @@ val orxFeatures = setOf(
 //  "orx-tensorflow",
 //  "orx-time-operators",
 //  "orx-timer",
-//  "orx-triangulation",
+  "orx-triangulation",
 //  "orx-video-profiles",
     null
 ).filterNotNull()
@@ -71,7 +71,7 @@ val ormlFeatures = setOf<String>(
 //    "orml-ssd",
 //    "orml-style-transfer",
 //    "orml-super-resolution",
-    "orml-u2net"
+//    "orml-u2net"
 )
 
 /** ## additional OPENRNDR features to be added to this project */
