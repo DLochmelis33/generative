@@ -5,13 +5,15 @@ import org.openrndr.color.ColorRGBa
 import org.openrndr.extra.noise.*
 import org.openrndr.math.Vector2
 
-const val cols: Int = 16 * 3
-const val rows: Int = 9 * 3
+const val cols: Int = 16 * 10
+const val rows: Int = 9 * 10
 
-const val noisePower: Double = 0.015
+const val noisePower: Double = 0.05
 const val noiseSpeed: Double = 1.0
 const val noiseUniformity: Double = 2000.0
 const val snapCoef: Double = 0.0005
+
+val randomSeed: Long = System.currentTimeMillis()
 
 fun main() = application {
     configure {
@@ -23,7 +25,7 @@ fun main() = application {
     program {
         backgroundColor = ColorRGBa.WHITE
 
-        Random.seed = System.currentTimeMillis().toString()
+        Random.seed = randomSeed.toString()
 
         val initPoints: List<Vector2> = run {
             val colW = 1.0 * width / cols
@@ -49,7 +51,7 @@ fun main() = application {
                 val noiseUniformCoef = noiseUniformity
                 val noise: Vector2 = gradient3D(
                     simplex3D,
-                    Random.seed.hashCode(),
+                    randomSeed.hashCode(),
                     p.x / noiseUniformCoef,
                     p.y / noiseUniformCoef,
                     seconds * noiseSpeed
@@ -71,7 +73,7 @@ fun main() = application {
 
             drawer.fill = ColorRGBa.BLACK
             drawer.stroke = ColorRGBa.BLACK
-            drawer.circles(points, 3.0)
+            drawer.circles(points, 0.5)
         }
     }
 }
